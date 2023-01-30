@@ -1,4 +1,4 @@
-{{-  $applicationName := printf "sync-waves-%s-%s" .Values.git.branch_name .Values.git.number -}}
+{{-  $applicationName := printf "%s-sync-waves" .Values.project -}}
 
 apiVersion: argoproj.io/v1alpha1
 kind: Application
@@ -9,7 +9,7 @@ metadata:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: {{ .Values.namespace }}
+    namespace: {{ .Values.project }}
     server: {{ .Values.spec.destination.server }}
   project: default
   source:
