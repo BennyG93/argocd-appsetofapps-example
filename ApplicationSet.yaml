@@ -42,6 +42,6 @@ spec:
           - name: "git.branch_name"
             value: "{{branch}}"
           - name: "git.number"
-            value: "{{number}}"
+            value: '{{number}}'
       syncPolicy:
         automated: {}
