@@ -1,7 +1,6 @@
 spec:
   destination:
-    # server: https://kubernetes.default.svc
-    server: https://942EB0AEF7477B400F2774D0C6CAE57C.gr7.eu-west-1.eks.amazonaws.com
+    server: https://kubernetes.default.svc
   source:
     repoURL: https://github.com/argoproj/argocd-example-apps
     targetRevision: HEAD
@@ -11,4 +10,4 @@ spec:
 # git:
 #   sha_hash: <git sha hash>
 #   branch_name: <pr branch name>
-#   pr_number: <pr number>
+#   number: <pr number>

@@ -20,7 +20,7 @@ spec:
         # - preview
   template:
     metadata:
-      name: 'guestbook-{{branch}}-{{number}}'
+      name: 'example-pr-{{number}}'
       namespace: argocd
       finalizers:
       - resources-finalizer.argocd.argoproj.io
@@ -28,20 +28,20 @@ spec:
       project: default
       destination:
         namespace: argocd
-        server: https://942EB0AEF7477B400F2774D0C6CAE57C.gr7.eu-west-1.eks.amazonaws.com
+        server: https://kubernetes.default.svc
       source:
         repoURL: https://github.com/BennyG93/argocd-appsetofapps-example.git
         path: apps
         targetRevision: '{{branch}}'
         helm:
           parameters:
-          - name: "namespace"
-            value: 'guestbook-{{branch}}-{{number}}'
+          - name: "project"
+            value: 'example-pr-{{number}}'
           - name: "git.sha_hash"
-            value: "{{head_sha}}"
+            value: '{{head_sha}}'
           - name: "git.branch_name"
-            value: "{{branch}}"
+            value: '{{branch}}'
           - name: "git.pr_number"
-            value: "{{number}}"
+            value: '{{number}}'
       syncPolicy:
         automated: {}
