@@ -1,4 +1,4 @@
-{{-  $applicationName := printf "helm-hooks-%s-%s" .Values.git.branch_name .Values.git.pr_number -}}
+{{-  $applicationName := printf "helm-hooks-%s-%s" .Values.git.branch_name .Values.git.number -}}
 
 apiVersion: argoproj.io/v1alpha1
 kind: Application

@@ -41,7 +41,7 @@ spec:
             value: "{{head_sha}}"
           - name: "git.branch_name"
             value: "{{branch}}"
-          - name: "git.pr_number"
+          - name: "git.number"
             value: "{{number}}"
       syncPolicy:
         automated: {}
