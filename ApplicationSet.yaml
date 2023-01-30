@@ -1,0 +1,47 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: guestbook-preview-generator
+  namespace: argocd
+spec:
+  generators:
+  - pullRequest:
+      github:
+        # The GitHub organization or user.
+        owner: BennyG93
+        # The Github repository
+        repo: argocd-appsetofapps-example
+        # Reference to a Secret containing an access token. (optional)
+        # tokenRef:
+        #   secretName: github-token
+        #   key: token
+        # Labels is used to filter the PRs that you want to target. (optional)
+        # labels:
+        # - preview
+  template:
+    metadata:
+      name: 'guestbook-{{branch}}-{{number}}'
+      namespace: argocd
+      finalizers:
+      - resources-finalizer.argocd.argoproj.io
+    spec:
+      project: default
+      destination:
+        namespace: argocd
+        server: https://942EB0AEF7477B400F2774D0C6CAE57C.gr7.eu-west-1.eks.amazonaws.com
+      source:
+        repoURL: https://github.com/BennyG93/argocd-appsetofapps-example.git
+        path: apps
+        targetRevision: '{{branch}}'
+        helm:
+          parameters:
+          - name: "namespace"
+            value: 'guestbook-{{branch}}-{{number}}'
+          - name: "git.sha_hash"
+            value: "{{head_sha}}"
+          - name: "git.branch_name"
+            value: "{{branch}}"
+          - name: "git.pr_number"
+            value: "{{number}}"
+      syncPolicy:
+        automated: {}

@@ -1,0 +1,14 @@
+spec:
+  destination:
+    # server: https://kubernetes.default.svc
+    server: https://942EB0AEF7477B400F2774D0C6CAE57C.gr7.eu-west-1.eks.amazonaws.com
+  source:
+    repoURL: https://github.com/argoproj/argocd-example-apps
+    targetRevision: HEAD
+
+# # These value should be defined automatically from the Argocd PR generator
+# namespace: guestbook-{{branch}}-{{number}}
+# git:
+#   sha_hash: <git sha hash>
+#   branch_name: <pr branch name>
+#   pr_number: <pr number>
