@@ -20,7 +20,7 @@ spec:
         # - preview
   template:
     metadata:
-      name: 'example-PR-{{number}}'
+      name: 'example-pr-{{number}}'
       namespace: argocd
       finalizers:
       - resources-finalizer.argocd.argoproj.io
@@ -36,7 +36,7 @@ spec:
         helm:
           parameters:
           - name: "project"
-            value: 'exmple-PR-{{number}}'
+            value: 'exmple-pr-{{number}}'
           - name: "git.sha_hash"
             value: '{{head_sha}}'
           - name: "git.branch_name"
