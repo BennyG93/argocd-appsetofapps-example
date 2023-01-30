@@ -38,10 +38,10 @@ spec:
           - name: "namespace"
             value: 'guestbook-{{branch}}-{{number}}'
           - name: "git.sha_hash"
-            value: {{head_sha}}
+            value: '{{head_sha}}'
           - name: "git.branch_name"
-            value: {{branch}}
+            value: '{{branch}}'
           - name: "git.number"
-            value: {{number}}
+            value: '{{number}}'
       syncPolicy:
         automated: {}
