@@ -31,7 +31,7 @@ spec:
         server: https://kubernetes.default.svc
       source:
         repoURL: https://github.com/BennyG93/argocd-appsetofapps-example.git
-        path: apps
+        path: helm
         targetRevision: '{{branch}}'
         helm:
           parameters:

@@ -20,7 +20,7 @@ Example-repo/
 │ │ └── service-b.yaml
 │ ├── Chart.yaml
 │ └── values.yaml
-└── applicationSet.yaml
+└── ApplicationSet.yaml
 ```
 
 The second repo contains the Helm chart for deploying your applications. Of course, this is Argocd and you can also use Kustomize or plain K8s manifests. For this example we will deploy the example [guestbook applications](https://github.com/argoproj/argocd-example-apps) from Argocd
