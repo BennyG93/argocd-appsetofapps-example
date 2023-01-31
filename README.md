@@ -10,7 +10,7 @@ The goal is to automatically deploy a particular application and its dependencie
 
 ![appset of apps](docs/argocd-appset-of-apps.jpg)
 
-This example uses 2 git repositories, the first is the `source` repository. It contains the `ApplicationSet` definition as well as a `Helm` chart containing templates of the child apps.
+This example uses 2 git repositories, the first is the `source` repository. It contains the `ApplicationSet` definition as well as a `Helm` chart containing templates of the child apps. For this complete example I am using a slightly modified version of the [example](https://github.com/argoproj/argocd-example-apps/tree/master/apps) "app of apps" helm chart from Argocd
 
 ```
 Example-repo/
@@ -23,4 +23,4 @@ Example-repo/
 └── applicationSet.yaml
 ```
 
-The second repo contains the Helm chart for deploying your applications. Of course, this is Argocd and you can also use Kustomize or plain K8s manifests. For this complete example I am using a slightly modified version of the [example](https://github.com/argoproj/argocd-example-apps/tree/master/apps) "app of apps" helm chart from Argocd 
+The second repo contains the Helm chart for deploying your applications. Of course, this is Argocd and you can also use Kustomize or plain K8s manifests. For this example we will deploy the example [guestbook applications](https://github.com/argoproj/argocd-example-apps) from Argocd
