@@ -23,4 +23,4 @@ Example-repo/
 └── applicationSet.yaml
 ```
 
-The second repo contains the Helm chart for deploying your applications. Of course, this is Argocd and you can also use Kustomize or plain K8s manifests.
+The second repo contains the Helm chart for deploying your applications. Of course, this is Argocd and you can also use Kustomize or plain K8s manifests. For this complete example I am using a slightly modified version of the [example](https://github.com/argoproj/argocd-example-apps/tree/master/apps) "app of apps" helm chart from Argocd 

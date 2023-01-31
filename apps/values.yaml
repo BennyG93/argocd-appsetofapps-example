@@ -10,4 +10,4 @@ spec:
 # git:
 #   sha_hash: <git sha hash>
 #   branch_name: <pr branch name>
-#   number: <pr number>
+#   pr_number: <pr number>
