@@ -39,8 +39,6 @@ spec:
             value: 'example-pr-{{number}}'
           - name: "git.sha_hash"
             value: '{{head_sha}}'
-          - name: "git.short_sha"
-            value: "{{head_short_sha}}"
           - name: "git.branch_name"
             value: '{{branch}}'
           - name: "git.pr_number"
