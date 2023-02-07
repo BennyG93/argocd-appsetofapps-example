@@ -5,8 +5,4 @@ kind: ConfigMap
 metadata:
   name: {{ $applicationName }}
 data:
-  project: {{ .Values.project }}
-  head_sha: {{ .Values.git.sha_hash }}
-  head_short_sha: {{ .Values.git.short_sha }}
-  branch: {{ .Values.git.branch_name }}
-  number: {{ .Values.git.pr_number }}
+  project: {{ .Values.project | quote }}
