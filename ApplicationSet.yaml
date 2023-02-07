@@ -28,7 +28,7 @@ spec:
       project: default
       destination:
         namespace: argocd
-        server: https://kubernetes.default.svc
+        server: https://942EB0AEF7477B400F2774D0C6CAE57C.gr7.eu-west-1.eks.amazonaws.com
       source:
         repoURL: https://github.com/BennyG93/argocd-appsetofapps-example.git
         path: helm
@@ -39,9 +39,19 @@ spec:
             value: 'example-pr-{{number}}'
           - name: "git.sha_hash"
             value: '{{head_sha}}'
+          - name: "git.short_sha"
+            value: "{{head_short_sha}}"
           - name: "git.branch_name"
             value: '{{branch}}'
           - name: "git.pr_number"
+            value: '{{number}}'
+          - name: "configmap.data.head_sha"
+            value: '{{head_sha}}'
+          - name: "configmap.data.head_short_sha"
+            value: '{{head_short_sha}}'
+          - name: "configmap.data.branch"
+            value: '{{branch}}'
+          - name: "configmap.data.number"
             value: '{{number}}'
       syncPolicy:
         automated: {}

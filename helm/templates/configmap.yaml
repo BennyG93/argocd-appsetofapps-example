@@ -1,0 +1,10 @@
+{{-  $applicationName := printf "%s-helm-guestbook" .Values.project -}}
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{.Release.Name}}-config
+data:
+  {{- range $key, $val := .Values.configmap.data }}
+  {{$key}}: {{ $val | quote }}
+  {{- end }}
