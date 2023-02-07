@@ -1,10 +1,12 @@
-{{-  $applicationName := printf "%s-helm-guestbook" .Values.project -}}
+{{-  $applicationName := printf "%s-config" .Values.project -}}
 
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{.Release.Name}}-config
+  name: {{ $applicationName }}
 data:
-  {{- range $key, $val := .Values.configmap.data }}
-  {{$key}}: {{ $val | quote }}
-  {{- end }}
+  project: {{ .Values.project }}
+  head_sha: {{ .Values.git.sha_hash }}
+  head_short_sha: {{ .Values.git.short_sha }}
+  branch: {{ .Values.git.branch_name }}
+  number: {{ .Values.git.pr_number }}

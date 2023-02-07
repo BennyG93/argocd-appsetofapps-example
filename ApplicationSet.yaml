@@ -45,13 +45,5 @@ spec:
             value: '{{branch}}'
           - name: "git.pr_number"
             value: '{{number}}'
-          - name: "configmap.data.head_sha"
-            value: '{{head_sha}}'
-          - name: "configmap.data.head_short_sha"
-            value: '{{head_short_sha}}'
-          - name: "configmap.data.branch"
-            value: '{{branch}}'
-          - name: "configmap.data.number"
-            value: '{{number}}'
       syncPolicy:
         automated: {}
