@@ -1,0 +1,8 @@
+{{-  $applicationName := printf "%s-config" .Values.project -}}
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ $applicationName }}
+data:
+  project: {{ .Values.project | quote }}

@@ -28,7 +28,7 @@ spec:
       project: default
       destination:
         namespace: argocd
-        server: https://kubernetes.default.svc
+        server: https://942EB0AEF7477B400F2774D0C6CAE57C.gr7.eu-west-1.eks.amazonaws.com
       source:
         repoURL: https://github.com/BennyG93/argocd-appsetofapps-example.git
         path: helm
